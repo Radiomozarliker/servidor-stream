@@ -5,7 +5,104 @@
  * @package WordPress
  * @subpackage Administration
  */
+<?php
+/**
+ * The base configurations of the WordPress.
+ *
+ * This file has the following configurations: MySQL settings, Table Prefix,
+ * Secret Keys, and ABSPATH. You can find more information by visiting
+ * {@link https://codex.wordpress.org/Editing_wp-config.php Editing wp-config.php}
+ * Codex page. You can get the MySQL settings from your web host.
+ *
+ * This file is used by the wp-config.php creation script during the
+ * installation. You don't have to use the web site, you can just copy this file
+ * to "wp-config.php" and fill in the values.
+ *
+ * @package WordPress
+ */
 
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define('WP_CACHE', true); //Added by WP-Cache Manager
+define( 'WPCACHEHOME', '/customers/0/1/6/mozarliker.com.br/httpd.www/webradiomozarstreaming1/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
+define('DB_NAME', 'mozarliker_com_br');
+
+/** MySQL database username */
+define('DB_USER', 'mozarliker_com_br');
+
+/** MySQL database password */
+define('DB_PASSWORD', '1110198411');
+
+/** MySQL hostname */
+define('DB_HOST', 'mozarliker.com.br.mysql.service.one.com');
+
+/** Database Charset to use in creating database tables. */
+define('DB_CHARSET', 'utf8');
+
+/** The Database Collate type. Don't change this if in doubt. */
+define('DB_COLLATE', '');
+
+/**#@+
+ * Authentication Unique Keys and Salts.
+ *
+ * Change these to different unique phrases!
+ * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
+ * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
+ *
+ * @since 2.6.0
+ */
+define('AUTH_KEY',         'O9E2ws_j1sH4MaAl4v84c1TY5CxpRNOiU3UuPD2ozTY=');
+define('SECURE_AUTH_KEY',  'nyA6JIORrw3f6QIfVxRrBdxVnkKMGYD7XSFLrsEyfBA=');
+define('LOGGED_IN_KEY',    'jwHJhgibItBDF8ZVh6KI03tOHrsBQN3eYZtCPbFJqrw=');
+define('NONCE_KEY',        'G9obSi4yukacKP_jvga9TNfFfnuq8Dddx-G6AWYjWWE=');
+define('AUTH_SALT',        '44gOV9b65lJMs8cGCAj_2rmEDwGtAJ3KF-HRbz-eNPg=');
+define('SECURE_AUTH_SALT', 'HzDZg26XM9ayjpu5Ysb_icsEi--SVsvzBJSUSch3UEU=');
+define('LOGGED_IN_SALT',   'n_V6D1nQNZ44UVOvZHbFeAOnUYB6ypg3gJ1eAjvn5Ro=');
+define('NONCE_SALT',       'TUBSvohgaisdQ2i0LQSKKivk38n-Wp4KLdFSF3465BI=');
+
+/**#@-*/
+
+/**
+ * WordPress Database Table prefix.
+ *
+ * You can have multiple installations in one database if you give each a unique
+ * prefix. Only numbers, letters, and underscores please!
+ */
+$table_prefix  = 'webradiomozarstreaming1_';
+
+/**
+ * WordPress Localized Language, defaults to English.
+ *
+ * Change this to localize WordPress. A corresponding MO file for the chosen
+ * language must be installed to wp-content/languages. For example, install
+ * de_DE.mo to wp-content/languages and set WPLANG to 'de_DE' to enable German
+ * language support.
+ */
+define('WPLANG', 'pt_PT');
+
+/**
+ * For developers: WordPress debugging mode.
+ *
+ * Change this to true to enable the display of notices during development.
+ * It is strongly recommended that plugin and theme developers use WP_DEBUG
+ * in their development environments.
+ */
+define('WP_DEBUG', false);
+
+/** 
+ * Prevent file editing from WP admin.
+ * Just set to false if you want to edit templates and plugins from WP admin.  
+ */
+define('DISALLOW_FILE_EDIT', true);
+
+/* That's all, stop editing! Happy blogging. */
+
+/** Absolute path to the WordPress directory. */
+if ( !defined('ABSPATH') )
+	define('ABSPATH', dirname(__FILE__) . '/');
+
+/** Sets up WordPress vars and included files. */
+require_once(ABSPATH . 'wp-settings.php');
 /** WordPress Administration Bootstrap */
 require_once( dirname( __FILE__ ) . '/admin.php' );
 
